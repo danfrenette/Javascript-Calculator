@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Calculator</title>
+  <script>
+    function sayGoodbye(){
+      var leftValue = Number(document.getElementById('lValue').value);
+      var rightValue = Number(document.getElementById('rValue').value);
+      console.log(leftValue + rightValue);
+      var result = leftValue + rightValue;
+      var operator = document.getElementById("operator").value;
+        var resultElement = document.getElementById("result");
+      if( operator === "+"){
+        var result = leftValue + rightValue;
+      } else if( operator === "-") {
+        var result = leftValue - rightValue;
+      } else if( operator === "/") {
+        var result = leftValue / rightValue;
+      } else if( operator === "*") {
+        var result = leftValue * rightValue;
+      } else {
+        var result = "Hey, you can't do that!";
+      }
+
+      resultElement.innerText = result;
+      return false;
+    }
+  </script>
+  </head>
+
+  <body>
+  <h1>Dan's Awesome Calculator</h1>
+
+  <p id="result">You haven't made a calculation yet</p>
+  <form onsubmit="return sayGoodbye();">
+    <input type="number" id="lValue" />
+    <input type="text" id="operator" />
+    <input type="number" id="rValue" />
+    <input type="submit" />
+  </form>
+</html>
